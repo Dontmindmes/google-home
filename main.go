@@ -30,6 +30,8 @@ func main() {
 	// Change language
 	cli.Notify("かねたさんこんにちは、Googleです。")
 	// Start the lookup
+	googleCastServiceName := "_googlecast._tcp"
+	mdns.Lookup(googleCastServiceName, entriesCh)
 	close(entriesCh)
 	time.Sleep(time.Second * 5)
 }
